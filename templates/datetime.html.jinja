@@ -1,0 +1,9 @@
+{% extends "base.html.jinja" %}
+{% block content %}
+<h1>DateTime</h1>
+<p>The current date and time is: {{ datetime }}</p>
+<p>To update the time you have to reload the page. Implementing this page with websockets or fetch api would be better as it would allow it to change in realtime.</p>
+<form action="">
+	<input type="submit" value="Reload">
+</form>
+{% endblock %}

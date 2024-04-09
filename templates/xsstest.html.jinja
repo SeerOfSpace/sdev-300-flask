@@ -1,0 +1,19 @@
+{% extends "base.html.jinja" %}
+{% block content %}
+<h1>XSS Test</h1>
+<p>This page is an example of what happens when user input is taken without first sanitizing it.</p>
+<p>
+	For example try inputting: {{ '<script>document.write(new Date().toString());</script>'|e }}
+	<br>
+	Or: {{ "<script>new Audio('https://us-tuna-sounds-files.voicemod.net/2e649d81-8c01-49dc-a06c-7e0435d507b9-1666850288650.mp3').play();</script>"|e }}
+</p>
+<form method="get">
+	<label>Input:</label>
+	<input type="text" name="input1" value="{{ input2 }}">
+	<input type="submit" value="Submit">
+</form>
+<h2>Sanitized Input</h2>
+<div>{{ input1 }}</div>
+<h2>Unsanitized Input</h2>
+<div>{{ input2 }}</div>
+{% endblock %}

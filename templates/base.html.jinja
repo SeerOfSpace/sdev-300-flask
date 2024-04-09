@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ request.url_rule.endpoint }}</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='site.css')}}">
+	</head>
+	<body>
+		<div class="navbar">
+			{% macro navsetup(path, name) -%}
+				<a href="{{ url_for(path) }}" {% if request.url_rule.endpoint == path %}id="active"{% endif %}>{{ name }}</a>
+			{%- endmacro %}
+			{{ navsetup('home', 'Home') }}
+			{{ navsetup('datetime_page', 'DateTime') }}
+			{{ navsetup('xsstest', 'XSS Test') }}
+		</div>
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

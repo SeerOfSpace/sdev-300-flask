@@ -1,0 +1,85 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	background-color: rgb(230, 230, 230);
+	width: 100vw;
+	height: 100vh;
+	word-wrap: break-word;
+}
+
+.navbar {
+	display: flex;
+	background-color: rgb(201, 201, 201);
+	gap: 10px;
+	padding: 10px;
+	align-items: baseline;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+	text-decoration: none;
+	transition-duration: 100ms;
+	font-size: 1.1em;
+	font-weight: 400;
+	color: inherit;
+}
+
+.navbar a:hover {
+	text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.3);
+}
+
+.navbar a:first-child {
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+.content {
+	padding: 10px 10px;
+	margin: 20px;
+	background-color: rgb(255, 255, 255);
+	/*min-height: 80%;*/
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	animation: 750ms ease-out 0s fade-and-rise;
+}
+
+@keyframes fade-and-rise {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+:is(h1, h2, h3) + p::first-letter {
+	font-size: 1.2em;
+	font-weight: bold;
+	/*float: left;*/
+}
+
+#active {
+	color: rgb(0, 87, 168);
+	/*text-decoration: underline;*/
+}
+
+#imgrow {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+#imgrow img {
+	width: auto;
+	height: 100px;
+	padding: 5px;
+	border-style: solid;
+	border-width: 0px;
+	box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.4);
+}
